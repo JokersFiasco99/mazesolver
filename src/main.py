@@ -1,4 +1,4 @@
-from window import MainWindow, Point, Line, Cell
+from window import MainWindow, Point, Line, Cell, Maze
 
 def main():
     win = MainWindow(800, 600)
@@ -26,6 +26,17 @@ def main():
     cell5.has_right_wall = False
     cell5.has_bottom_wall = False
     cell5.draw()
+
+    # Test maze creation
+    maze = Maze(
+        x1=350,          # Start 350px from left
+        y1=200,          # Start 200px from top
+        num_rows=4,      # 4x5 grid of cells
+        num_cols=5,
+        cell_size_x=50,  # Each cell is 50x50 pixels
+        cell_size_y=50,
+        win=win
+    )
 
     win.wait_for_close()
 
